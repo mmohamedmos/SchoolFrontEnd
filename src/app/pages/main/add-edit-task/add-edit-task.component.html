@@ -1,0 +1,14 @@
+<div class="model-content">
+    <p *ngIf="student.id===0">add new student</p>
+    <p *ngIf="student.id>0">Edit student</p>
+    <div class="from-group">
+        <input [(ngModel)]="student.name" type="text" class="form-control"placeholder="student name">
+        </div>
+   <div class="from-group">
+        <input [(ngModel)]="student.class" type="text" class="form-control"placeholder="student class">
+         </div>
+         <input [(ngModel)]="student.termid" type="text" class="form-control"placeholder="student termid">
+        <button class="btn btn-primary"*ngIf="student.id===0" (click)="onAddTask()">Add</button>
+        <button class="btn btn-primary"*ngIf="student.id>0" (click)="onEditTask()">Edit</button>
+        &nbsp;<button class="btn btn-danger"(click)="Bsmodel.hide()">cancel</button>    
+</div>

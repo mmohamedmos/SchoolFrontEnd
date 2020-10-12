@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<br><br><br>
+<div class="container">
+    <button style="text-align: right;" class="btn btn-primary"(click)="OnRegisterTask()" >HR Register</button>
+    <div style="text-align: right;">
+      <button class="btn btn-primary"(click)="OnAddNewTask()">Add New student</button>
+  </div>
+    <table class="table table-striped">
+     <thead>
+     <tr>
+       <th scope="col">id</th>
+       <th scope="col">Name</th>
+       <th scope="col">class</th>
+       <th scope="col">term</th>
+       <th scope="col">subject</th>
+     </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let val of task">
+       <td>{{val.id}}</td>
+       <td>{{val.name}}</td>
+       <td>{{val.class}}</td>
+       <td>{{val.term.name}}</td>
+       <td><h6 *ngFor="let valname of val.term.subject">{{valname.name}}</h6></td> 
+       <td>
+       <a class="pointer" (click)="onEditTask(val)">Edit</a>
+       <br>
+       <a class="pointer" (click)="onDeleteTask(val.id)">Delete</a>
+      </td>
+     </tr>
+     </tbody>
+   </table>
+   <button class="btn btn btn-success my-2 my-sm-0" type="logout" (click)="logout()">logout</button>
+
+   </div>
+  
